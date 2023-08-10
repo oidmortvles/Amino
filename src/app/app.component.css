@@ -1,0 +1,35 @@
+/* CONTAINER DE TODOS LOS ELEMENTOS */
+.container{
+    display: flex;
+    box-sizing: border-box;
+}
+
+
+/* ORGANIZADOR DE JUEGO */
+.game{
+    width: 70%;
+    background-color:var(--game);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 3em;
+    box-sizing: border-box;
+}
+
+
+/* ORGANIZADOR DE RESULTADO */
+.result{
+    width: 30%;
+    background-color: var(--result);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 3em;
+    box-sizing: border-box;
+    color:var(--textW); 
+      
+}

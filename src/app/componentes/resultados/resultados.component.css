@@ -1,0 +1,77 @@
+.titulos{
+    text-align: center;
+    color: var(--textW);
+    margin: .5em 0em;
+}
+
+/* APUESTA */
+.apuesta{
+    display: flex;
+    gap:.7em;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
+}
+
+.apuesta div:nth-child(even){
+    background-color: var(--tarjetas);
+}
+
+
+/* SECCION DE PUNTOS TOTALES */
+.puntos-totales{
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+.pts{
+    font-size: 1em;
+    margin-right: 1em;
+}
+
+.valor{
+    font-size: 5em;
+}
+
+.total{
+    font-size: 2em;
+    color:var(--tarjetas);
+}
+
+
+/* CONTADOR DE RONDAS */
+.vidas{
+    display: flex;
+    gap:.7em;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
+}
+
+.live1,.live2,.live3{
+    width: 2em;
+    height: 2em;
+    background-color: var(--textW);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--textW);
+}
+
+.vidas div:nth-child(1){
+    background-color: var(--tarjetas);
+}
+
+/* BOTONERA DE CONTROL */
+.restart{
+    padding: 1em;
+    background-color: var(--botonera);
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:.7em;   
+}

@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --tarjetas:crimson;
+    --botonera:crimson;
+    --game:antiquewhite;
+    --result:black;
+    --textW: white;
+    --textB: black;
+    --jugador1:dodgerblue;
+    --jugador2:yellow;
+  }

@@ -1,0 +1,72 @@
+/* ----------------SECCION CARTAS---------------- */
+/* ----------------SECCION CARTAS---------------- */
+/* ----------------SECCION CARTAS---------------- */
+
+/* CAJA DE TODAS LAS CARTAS */
+.cards{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* CARTA INDIVIDUAL */
+.flip-cards{
+    background-color: var(--tarjetas);
+    width: 10em;
+    height: 15em;
+    border-radius: .5em;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: -.5em 0 1em rgba(0, 0, 0, 0.3),
+    -.7em 0 1em rgba(0, 0, 0, 0.2),
+    -.9em 0 1em rgba(0, 0, 0, 0.1);
+    animation: darCartas 0.5s ease-in-out;
+    animation-fill-mode:backwards;
+}
+
+/* ANIMACION DE CARTAS */
+@keyframes darCartas {
+    0% { transform: translateY(-30em) rotate(180deg);} /* Estado inicial */
+   
+    100% { transform: translateY(0) rotate(0deg); } /* Estado final */
+  }
+
+/* ANIMACION PARA DAR CARTAS EN DISTINTO MOMENTO  */
+.flip-cards:nth-child(1){ animation-delay: 0.1s; }
+.flip-cards:nth-child(2) { animation-delay: 0.2s; }
+.flip-cards:nth-child(3) { animation-delay: 0.2s; }
+.flip-cards:nth-child(4) { animation-delay: 0.3s; }
+.flip-cards:nth-child(5) { animation-delay: 0.2s; }
+
+/* PARA QUE CIERTAS CARTAS SE SEPAREN */
+.flip-cards:nth-child(even){
+    margin-top: -.2em;
+    transform: rotate(3.3deg) translateY(-.5em);
+}
+
+
+.flip-cards:nth-child(odd):hover{
+    transform: rotate(-3deg);
+    margin-top: -2.5em;
+}
+
+.flip-cards:not(:nth-child(odd)):hover{
+    transform: rotate(8deg);
+    margin-top: -4em;
+}
+
+
+.flip-cards[class*="elemento"]{
+    margin-left: -1em;
+}
+
+/* VALOR DE CARTA */
+.number{
+    font-size: 5em;
+    color:var(--textW);
+}
