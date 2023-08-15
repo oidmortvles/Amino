@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Ronda } from 'src/app/modelos/ronda.model';
+import { RondaService } from 'src/app/servicios/ronda-service.service';
 
 @Component({
   selector: 'app-cartas',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartasComponent implements OnInit {
 
-  constructor() { }
+  /* ARRAY DONDE SE GUARDAN LAS RONDAS Y SUS DATOS */
+  rondas:Ronda[]=[];
 
-  ngOnInit(): void {
+
+  constructor(private rondaService: RondaService) { 
+    this.rondas=this.rondaService.rondas;
   }
+
+ 
+  
+  ngOnInit(): void {
+    this.rondaService.crearRonda();
+  }
+
+ 
+
+  
+
 
 }

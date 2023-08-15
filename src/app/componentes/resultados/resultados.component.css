@@ -1,3 +1,7 @@
+.contenedor-resultados div{
+    margin-bottom: .5em;
+}
+
 .titulos{
     text-align: center;
     color: var(--textW);

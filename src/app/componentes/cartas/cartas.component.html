@@ -1,12 +1,12 @@
-<div class="cards">
+<div class="cards" *ngFor="let r of rondas; let i = index">
 
     <!-- CARTA 1 -->
-    <div class="flip-cards ">
+    <div class="flip-cards" *ngFor="let car of r.cartas; let i = index" >
 
         <div class="front-cards">
 
-            <h3 class="number">30</h3>
-
+            <h3 class="number">{{car}}</h3>
+            
         </div>
 
         <!-- <div class="back-cards">
@@ -17,59 +17,10 @@
 
     </div>
 
-    <!-- CARTA 2 -->
-    <div class="flip-cards elemento">
-
-        <div class="front-cards">
-
-            <h3 class="number">30</h3>
-
-        </div>
-
-        <!-- <div class="back-cards">
-
-            <h3>40</h3>
-
-        </div> -->
-
-    </div>
-
-    <!-- CARTA 3 -->
-    <div class="flip-cards elemento">
-
-        <div class="front-cards">
-
-            <h3 class="number">30</h3>
-
-        </div>
-
-        <!-- <div class="back-cards">
-
-            <h3>40</h3>
-
-        </div> -->
-
-    </div>
-
-    <!-- CARTA 4 -->
-    <div class="flip-cards elemento">
-
-        <div class="front-cards">
-
-            <h3 class="number">30</h3>
-
-        </div>
-
-        <!-- <div class="back-cards">
-
-            <h3>40</h3>
-
-        </div> -->
-
-    </div>
+    
 
     <!-- CARTA 5 -->
-    <div class="flip-cards elemento">
+    <!-- <div class="flip-cards elemento">
 
         <div class="front-cards">
 
@@ -77,13 +28,13 @@
 
         </div>
 
-        <!-- <div class="back-cards">
+        -- <div class="back-cards">
 
-            <h3>40</h3>
+                <h3>40</h3>
 
-        </div> -->
+        -- </div> 
 
-    </div>
+    </div> -->
 
 
 </div>

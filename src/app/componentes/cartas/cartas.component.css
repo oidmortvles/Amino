@@ -13,8 +13,8 @@
 /* CARTA INDIVIDUAL */
 .flip-cards{
     background-color: var(--tarjetas);
-    width: 10em;
-    height: 15em;
+    width: 11em;
+    height: 15.5em;
     border-radius: .5em;
     box-sizing: border-box;
     position: relative;
@@ -61,7 +61,7 @@
 }
 
 
-.flip-cards[class*="elemento"]{
+.flip-cards:not(:nth-child(1)){
     margin-left: -1em;
 }
 

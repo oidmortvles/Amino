@@ -1,0 +1,1 @@
+El juego se divide en Componente, los cuales cada Componente, tiene su correspondiente Servicio. Estos ultimos utilazan el molde de cada objeto guardado en la carpeta Modelos.
