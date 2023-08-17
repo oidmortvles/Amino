@@ -1,11 +1,17 @@
 .contenedor-resultados div{
     margin-bottom: .5em;
+    user-select: none;
+    font-family: 'Libre Baskerville', serif;
 }
 
 .titulos{
     text-align: center;
     color: var(--textW);
     margin: .5em 0em;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    
 }
 
 /* APUESTA */
@@ -15,6 +21,7 @@
     justify-content: center;
     width: 100%;
     padding: 1em;
+    user-select: none;
 }
 
 .apuesta div:nth-child(even){
@@ -28,20 +35,24 @@
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 .pts{
     font-size: 1em;
     margin-right: 1em;
+    user-select: none;
 }
 
 .valor{
     font-size: 5em;
+    user-select: none;
 }
 
 .total{
     font-size: 2em;
     color:var(--tarjetas);
+    user-select: none;
 }
 
 
@@ -52,6 +63,7 @@
     justify-content: center;
     width: 100%;
     padding: 1em;
+    user-select: none;
 }
 
 .live1,.live2,.live3{
@@ -63,6 +75,7 @@
     justify-content: center;
     align-items: center;
     color: var(--textW);
+    user-select: none;
 }
 
 .vidas div:nth-child(1){
@@ -70,12 +83,18 @@
 }
 
 /* BOTONERA DE CONTROL */
-.restart{
+.restart{    
     padding: 1em;
-    background-color: var(--botonera);
     border-radius: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:.7em;   
+    gap:.7em;
+    user-select: none;   
+}
+
+
+.btn{
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
 }

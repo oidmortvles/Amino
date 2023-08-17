@@ -1,5 +1,171 @@
 <div class="modulo-apuesta">
+
     <div class="selector-opciones">
-        <p>MODULO DE APUESTAS</p>
+        
+        <!-- PAR/IMPAR -->
+
+        <div class="parImpar caja-apuesta" [ngClass]="{'reverso': voltearPar}" >
+            
+            <div class="primera-cara">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="parImpar" (click)="mostrarReversoPar()" [(ngModel)]="valorSwitchPar">                
+                </div> 
+                
+                <label class="form-check-label" for="parImpar">PAR / IMPAR</label>
+            </div>
+
+            <!-- OPCIONES DE APUESTA PARA PAR/IMPAR -->
+            <div class="segunda-cara">
+
+                <select class="form-select" aria-label="Default select example">
+                    <option value="2">PAR</option>
+                    <option value="1">IMPAR</option>
+                </select>
+
+                <div class="botones-apuesta">
+                    <button type="button" class="btn btn-outline-secondary btn-apuesta" (click)="resetearEstadoPar()"><i class="bi bi-x-lg"></i></button>
+                </div>
+
+            </div>
+            
+        </div>
+
+
+
+
+
+        <!-- RANGO -->
+        <div class="rango caja-apuesta" [ngClass]="{'reverso': voltearRango}" >
+            
+            <div class="primera-cara">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="rango" (click)="mostrarReversoRango()" [(ngModel)]="valorSwitchRango">                
+                </div> 
+                
+                <label class="form-check-label" for="rango">RANGO DE VALORES</label>
+            </div>
+
+            <!-- OPCIONES DE APUESTA PARA RANGO -->
+            <div class="segunda-cara">
+
+                <select class="form-select" aria-label="Default select example">
+                    <option value="5">+5</option>
+                    <option value="10">+10</option>
+                    <option value="15">+15</option>
+                    <option value="20">+20</option>
+                </select>
+
+                <div class="botones-apuesta">
+                    <button type="button" class="btn btn-outline-secondary btn-apuesta" (click)="resetearEstadoRango()"><i class="bi bi-x-lg"></i></button>
+                </div>
+
+            </div>
+            
+        </div>
+
+
+
+
+        <!-- NUMERO EXACTO -->
+        <div class="numeroExacto caja-apuesta" [ngClass]="{'reverso': voltearExacto}" >
+            
+            <div class="primera-cara">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="exacto" (click)="mostrarReversoExacto()" [(ngModel)]="valorSwitchExacto">                
+                </div> 
+                
+                <label class="form-check-label" for="exacto">VALOR EXACTO</label>
+            </div>
+
+            <!-- OPCIONES DE APUESTA PARA EXACTO -->
+            <div class="segunda-cara">
+
+                <input type="text" class="form-control exactoInput" placeholder="VALOR EXACTO" aria-label="Username" aria-describedby="addon-wrapping">
+                                 
+
+                <div class="botones-apuesta">
+                    <button type="button" class="btn btn-outline-secondary btn-apuesta" (click)="resetearEstadoExacto()"><i class="bi bi-x-lg"></i></button>
+                </div>
+
+            </div>
+            
+        </div>
+
+
+
+
+
+        <!-- COLOR -->
+        <div class="color caja-apuesta" [ngClass]="{'reverso': voltearColor}" >
+            
+            <div class="primera-cara">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="color" (click)="mostrarReversoColor()" [(ngModel)]="valorSwitchColor">                
+                </div> 
+                
+                <label class="form-check-label" for="color">COLOR</label>
+            </div>
+
+            <!-- OPCIONES DE APUESTA PARA COLOR -->
+            <div class="segunda-cara">
+
+                <select class="form-select" aria-label="Default select example">
+                    <option value="R">ROJO</option>
+                    <option value="V">VERDE</option>
+                    <option value="C">CELESTE</option>
+                </select>
+
+                <div class="botones-apuesta">
+                    <button type="button" class="btn btn-outline-secondary btn-apuesta" (click)="resetearEstadoColor()"><i class="bi bi-x-lg"></i></button>
+                </div>
+
+            </div>
+            
+        </div>
+
+
+
+        
+        <!-- GIRAR CARTAS -->
+        <div class="girarCartas caja-apuesta" [ngClass]="{'reverso': voltearGirar}" >
+            
+            <div class="primera-cara">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="girarCartas" (click)="mostrarReversoGirar()" [(ngModel)]="valorSwitchGirar">                
+                </div> 
+                
+                <label class="form-check-label" for="girarCartas">GIRAR CARTAS</label>
+            </div>
+
+            <!-- OPCIONES DE APUESTA PARA GIRAR -->
+            <div class="segunda-cara">
+
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="valueGirar">
+                    <option selected value="C">GIRAR CARTAS</option>
+                </select>
+                  
+                <div class="botones-apuesta">
+                    <button type="button" class="btn btn-outline-secondary btn-apuesta" (click)="resetearEstadoGirar()"><i class="bi bi-x-lg"></i></button>
+                </div>
+
+            </div>
+            
+        </div>
+
+
+        
+        
+        
+
     </div>
+
+    
+    
+    <!-- BOTONES DE ENVIO -->
+    <div class="botones-envio">
+        <button type="button" class="btn btn-success btn-sm btn-envio">JUGAR</button>
+    </div> 
+
 </div>
+
+<h1>{{valueGirar}}</h1>

@@ -17,6 +17,7 @@ export class ResultadosComponent implements OnInit {
   
 
   ngOnInit(): void {
+    /* A LA VARIABLE CREADA ARRIBA LE ASIGNO LOS VALORES QUE VIENEN DEL METODO */
     this.puntosTotales = this.rondaService.contadorPuntos();
   }
 

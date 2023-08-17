@@ -13,13 +13,13 @@ export class CartasComponent implements OnInit {
   rondas:Ronda[]=[];
 
 
-  constructor(private rondaService: RondaService) { 
-    this.rondas=this.rondaService.rondas;
+  constructor(private rondaService: RondaService) {     
   }
 
  
   
   ngOnInit(): void {
+    this.rondas=this.rondaService.rondas;
     this.rondaService.crearRonda();
   }
 

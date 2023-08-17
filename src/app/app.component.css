@@ -1,5 +1,5 @@
 /* CONTAINER DE TODOS LOS ELEMENTOS */
-.container{
+.contenedor{
     display: flex;
     box-sizing: border-box;
 }
@@ -7,12 +7,13 @@
 
 /* ORGANIZADOR DE JUEGO */
 .game{
+    box-sizing: border-box;
     width: 70%;
     background-color:var(--game);
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center; 
     padding: 3em;
     box-sizing: border-box;
@@ -21,6 +22,7 @@
 
 /* ORGANIZADOR DE RESULTADO */
 .result{
+    box-sizing: border-box;
     width: 30%;
     background-color: var(--result);
     height: 100vh;

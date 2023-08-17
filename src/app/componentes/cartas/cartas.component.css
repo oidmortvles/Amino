@@ -15,6 +15,7 @@
     background-color: var(--tarjetas);
     width: 11em;
     height: 15.5em;
+    font-family: 'Libre Baskerville', serif;
     border-radius: .5em;
     box-sizing: border-box;
     position: relative;
@@ -27,6 +28,7 @@
     -.9em 0 1em rgba(0, 0, 0, 0.1);
     animation: darCartas 0.5s ease-in-out;
     animation-fill-mode:backwards;
+    user-select: none;
 }
 
 /* ANIMACION DE CARTAS */
@@ -69,4 +71,13 @@
 .number{
     font-size: 5em;
     color:var(--textW);
+}
+
+
+/* DIJE DE LA CARTA */
+.dijeCarta{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: red;
 }

@@ -7,6 +7,7 @@ import { CartasComponent } from './componentes/cartas/cartas.component';
 import { ResultadosComponent } from './componentes/resultados/resultados.component';
 import { ApuestasComponent } from './componentes/apuestas/apuestas.component';
 import { RondaService } from './servicios/ronda-service.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RondaService } from './servicios/ronda-service.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [RondaService],
   bootstrap: [AppComponent]
