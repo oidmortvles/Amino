@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ronda } from 'src/app/modelos/ronda.model';
 import { RondaService } from 'src/app/servicios/ronda-service.service';
 
 @Component({
@@ -8,17 +9,23 @@ import { RondaService } from 'src/app/servicios/ronda-service.service';
 })
 export class ResultadosComponent implements OnInit {
 
-  /* CONTADOR DE PUNTOS TOTALES DEL JUGADOR */
-  puntosTotales: number;
+  puntosTotales: number = 0;
 
-
-  constructor(private rondaService: RondaService) {     
-  }
-  
+  constructor(private rondaService: RondaService) { }
 
   ngOnInit(): void {
-    /* A LA VARIABLE CREADA ARRIBA LE ASIGNO LOS VALORES QUE VIENEN DEL METODO */
-    this.puntosTotales = this.rondaService.contadorPuntos();
+    this.rondaService.rondas$.subscribe(ronda => {
+      this.puntosTotales = this.calcularPuntosTotales(ronda);
+    });
   }
 
+  calcularPuntosTotales(rondas: Ronda[]): number {
+    let totalPuntos = 0;
+        
+    rondas.forEach(r => {
+      totalPuntos += r.puntos + r.puntosExtra;
+    });
+  
+    return totalPuntos;
+  }
 }

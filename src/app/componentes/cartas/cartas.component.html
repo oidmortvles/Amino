@@ -1,24 +1,30 @@
-<div class="cards" *ngFor="let r of rondas; let i = index">
+<div *ngIf="ultimaRonda">
 
-    <!-- CARTA 1 -->
-    <div class="flip-cards" *ngFor="let car of r.cartas; let i = index" >
+    <div class="cards">
 
-        <div class="front-cards">
-
-            <h3 class="number">{{car}}</h3>
-            <div class="dijeCarta"></div>
+        <!-- CARTA 1 -->
+        <div class="flip-cards" *ngFor="let car of ultimaRonda.cartas; let z = index;">
             
-        </div>
+            <div class="front-cards">
 
-        <!-- <div class="back-cards">
-
-            <h3>40</h3>
-
-        </div> -->
-
-    </div>
-
+                <div class="dijeCarta" [ngStyle]="{'background-color': ultimaRonda.colores[z]}"></div>
+                <h3 class="number">{{car}}</h3>
+                <div class="dijeCarta" [ngStyle]="{'background-color': ultimaRonda.colores[z]}"></div>
+                
+            </div>
+            
+            <!-- <div class="back-cards">
     
-
+                <h3>40</h3>
+    
+            </div> -->
+    
+        </div>
+    
+        
+    
+    
+    </div>
+    
 
 </div>

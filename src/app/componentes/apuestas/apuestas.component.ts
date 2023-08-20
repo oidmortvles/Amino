@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Ronda } from 'src/app/modelos/ronda.model';
+import { RondaService } from 'src/app/servicios/ronda-service.service';
+
 
 @Component({
   selector: 'app-apuestas',
@@ -7,17 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApuestasComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rondaService: RondaService) { }
+
+  rondas:Ronda[]=[];
 
   ngOnInit(): void {
+    this.rondas=this.rondaService.rondas;
   }
 
-  /* METODOS PARA APUESTAS */
+
+  /* ARRAY DONDE SE GUARDAN LAS APUESTAS HECHAS*/
+  apuestaTotal:any[]=[];
 
 
   /* ----PAR/IMPAR---- */
   voltearPar: boolean = false;
   valorSwitchPar: boolean = false;
+  valuePar:string="";
+
 
   mostrarReversoPar(): void {
     this.voltearPar = !this.voltearPar;
@@ -27,6 +37,7 @@ export class ApuestasComponent implements OnInit {
   resetearEstadoPar():void{
     this.voltearPar = false;
     this.valorSwitchPar = false; // Asegurarse de que el switch esté desactivado al reiniciar
+    this.valuePar="";
   }
 
   
@@ -34,6 +45,7 @@ export class ApuestasComponent implements OnInit {
   /* ----RANGO---- */
   voltearRango: boolean = false;
   valorSwitchRango: boolean = false;
+  valueRango:string="";
 
   mostrarReversoRango(): void {
     this.voltearRango = !this.voltearRango;
@@ -43,12 +55,14 @@ export class ApuestasComponent implements OnInit {
   resetearEstadoRango():void{
     this.voltearRango = false;
     this.valorSwitchRango = false; // Asegurarse de que el switch esté desactivado al reiniciar
+    this.valueRango="";
   }
 
 
   /* ----NUM EXACTO---- */
   voltearExacto: boolean = false;
   valorSwitchExacto: boolean = false;
+  valueExacto:number=0;
 
   mostrarReversoExacto(): void {
     this.voltearExacto = !this.voltearExacto;
@@ -58,15 +72,14 @@ export class ApuestasComponent implements OnInit {
   resetearEstadoExacto():void{
     this.voltearExacto = false;
     this.valorSwitchExacto = false; // Asegurarse de que el switch esté desactivado al reiniciar
+    this.valueExacto=0;
   }
-
-
-
 
 
   /* ----COLOR---- */
   voltearColor: boolean = false;
   valorSwitchColor: boolean = false;
+  valueColor:string="";
 
   mostrarReversoColor(): void {
     this.voltearColor = !this.voltearColor;
@@ -76,12 +89,13 @@ export class ApuestasComponent implements OnInit {
   resetearEstadoColor():void{
     this.voltearColor = false;
     this.valorSwitchColor = false; // Asegurarse de que el switch esté desactivado al reiniciar
+    this.valueColor="";
   }
 
   /* ----GIRAR CARTA---- */
   voltearGirar: boolean = false;
   valorSwitchGirar: boolean = false;
-  valueGirar:string;
+  valueGirar:string="";
 
   mostrarReversoGirar(): void {
     this.voltearGirar = !this.voltearGirar;
@@ -93,6 +107,35 @@ export class ApuestasComponent implements OnInit {
     this.valorSwitchGirar = false; // Asegurarse de que el switch esté desactivado al reiniciar
     this.valueGirar="";
   }
+
+
+
+  /* --------- METODOS DE APUESTA TOTAL --------- */
+
+  resetAll(){
+    this.resetearEstadoPar();
+    this.resetearEstadoRango();
+    this.resetearEstadoExacto();
+    this.resetearEstadoColor();
+    this.resetearEstadoGirar();
+    this.apuestaTotal=[];
+  }
+
+
+  hacerApuesta(){
+    /* INGRESO CADA VALOR DE APUESTA AL ARRAY CREADO */
+    this.apuestaTotal.push(this.valuePar);
+    this.apuestaTotal.push(this.valueRango);
+    if(this.valueExacto>0){this.apuestaTotal.push(this.valueExacto);}    
+    this.apuestaTotal.push(this.valueColor);
+    this.apuestaTotal.push(this.valueGirar);
+    /* ENVIO ESE ARRAY AL SERVICE DONDE EL METODO CREA LA RONDA */
+    this.rondaService.crearRonda(this.apuestaTotal);
+    /* REINICIO LOS VALORES Y RESETEO EL ARRAY */
+    this.resetAll();
+  }
+
+
 
 
 }

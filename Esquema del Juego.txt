@@ -1,1 +1,9 @@
 El juego se divide en Componente, los cuales cada Componente, tiene su correspondiente Servicio. Estos ultimos utilazan el molde de cada objeto guardado en la carpeta Modelos.
+
+
+ANOTACION DEL 17/8
+Crear el modelo de datos necesarios para que el Componente Apuestas registre las opciones del usuario y desde ese Componente o el Servicio se envie esa Ronda creada con las apuetas dadas. -> Event Binding
+
+
+ANOTACION DEL 20/8
+En el Servicio se crearon la mayoria de metodos para registrar y operar sobre las rondas. Faltan aquellos metodos que permitan determinar el ganador y eliminar la partida entera.

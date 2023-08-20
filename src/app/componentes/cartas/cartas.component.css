@@ -39,11 +39,11 @@
   }
 
 /* ANIMACION PARA DAR CARTAS EN DISTINTO MOMENTO  */
-.flip-cards:nth-child(1){ animation-delay: 0.1s; }
-.flip-cards:nth-child(2) { animation-delay: 0.2s; }
-.flip-cards:nth-child(3) { animation-delay: 0.2s; }
-.flip-cards:nth-child(4) { animation-delay: 0.3s; }
-.flip-cards:nth-child(5) { animation-delay: 0.2s; }
+.flip-cards:nth-child(1){ animation-delay: 0.3s; }
+.flip-cards:nth-child(2) { animation-delay: 0.3s; }
+.flip-cards:nth-child(3) { animation-delay: 0.3s; }
+.flip-cards:nth-child(4) { animation-delay: 0.4s; }
+.flip-cards:nth-child(5) { animation-delay: 0.3s; }
 
 /* PARA QUE CIERTAS CARTAS SE SEPAREN */
 .flip-cards:nth-child(even){
@@ -67,6 +67,14 @@
     margin-left: -1em;
 }
 
+.front-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
 /* VALOR DE CARTA */
 .number{
     font-size: 5em;
@@ -79,5 +87,5 @@
     width: 2em;
     height: 2em;
     border-radius: 50%;
-    background-color: red;
+    
 }

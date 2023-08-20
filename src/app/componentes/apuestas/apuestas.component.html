@@ -17,9 +17,9 @@
             <!-- OPCIONES DE APUESTA PARA PAR/IMPAR -->
             <div class="segunda-cara">
 
-                <select class="form-select" aria-label="Default select example">
-                    <option value="2">PAR</option>
-                    <option value="1">IMPAR</option>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="valuePar">
+                    <option value="P">PAR</option>
+                    <option value="I">IMPAR</option>
                 </select>
 
                 <div class="botones-apuesta">
@@ -48,11 +48,11 @@
             <!-- OPCIONES DE APUESTA PARA RANGO -->
             <div class="segunda-cara">
 
-                <select class="form-select" aria-label="Default select example">
-                    <option value="5">+5</option>
-                    <option value="10">+10</option>
-                    <option value="15">+15</option>
-                    <option value="20">+20</option>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="valueRango">
+                    <option value="CINCO">+5</option>
+                    <option value="DIEZ">+10</option>
+                    <option value="QUINCE">+15</option>
+                    <option value="VEINTE">+20</option>
                 </select>
 
                 <div class="botones-apuesta">
@@ -80,7 +80,7 @@
             <!-- OPCIONES DE APUESTA PARA EXACTO -->
             <div class="segunda-cara">
 
-                <input type="text" class="form-control exactoInput" placeholder="VALOR EXACTO" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="number" class="form-control exactoInput" placeholder="VALOR EXACTO" aria-label="Username" aria-describedby="addon-wrapping" [(ngModel)]="valueExacto">
                                  
 
                 <div class="botones-apuesta">
@@ -109,10 +109,13 @@
             <!-- OPCIONES DE APUESTA PARA COLOR -->
             <div class="segunda-cara">
 
-                <select class="form-select" aria-label="Default select example">
-                    <option value="R">ROJO</option>
-                    <option value="V">VERDE</option>
-                    <option value="C">CELESTE</option>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="valueColor">
+                    <option value="RO">ROJO</option>
+                    <option value="AZ">AZUL</option>
+                    <option value="VE">VERDE</option>
+                    <option value="AM">AMARILLO</option>
+                    <option value="NA">NARANJA</option>
+                    <option value="BL">BLANCO</option>
                 </select>
 
                 <div class="botones-apuesta">
@@ -141,9 +144,10 @@
             <div class="segunda-cara">
 
                 <select class="form-select" aria-label="Default select example" [(ngModel)]="valueGirar">
-                    <option selected value="C">GIRAR CARTAS</option>
+                    <option selected value="G">GIRAR CARTAS</option>
                 </select>
-                  
+                
+
                 <div class="botones-apuesta">
                     <button type="button" class="btn btn-outline-secondary btn-apuesta" (click)="resetearEstadoGirar()"><i class="bi bi-x-lg"></i></button>
                 </div>
@@ -152,7 +156,11 @@
             
         </div>
 
-
+          
+          
+          
+          
+          
         
         
         
@@ -163,9 +171,7 @@
     
     <!-- BOTONES DE ENVIO -->
     <div class="botones-envio">
-        <button type="button" class="btn btn-success btn-sm btn-envio">JUGAR</button>
+        <button type="button" class="btn btn-success btn-sm btn-envio" (click)="hacerApuesta()">JUGAR</button>
     </div> 
 
 </div>
-
-<h1>{{valueGirar}}</h1>
