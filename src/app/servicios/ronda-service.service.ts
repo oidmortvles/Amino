@@ -23,11 +23,16 @@ export class RondaService {
   ultimaRonda$ = this.ultimaRondaSubject.asObservable(); //Esto guarda solamente la ultima ronda creada
   
 
+/* VARIABLE PARA SETEAR LOS INTENTOS JUGADOS UNA VEZ QUE INICIO LA PARTIDA */  
+  intentosJugados:number=0;
+  
+
   /* METODOS PARA EVALUAR CADA APUESTA */
 
   /* -----PAR/IMAR----- */
   puntuarParImpar(puntosTotales:number,apuesta:string){
     let puntosExtra:number=0;
+
     if(puntosTotales % 2 === 0 && apuesta==="P"){
       puntosExtra=10;
     }
@@ -68,7 +73,7 @@ export class RondaService {
     let puntosExtra:number=0;
 
     if(puntosTotales === apuesta){
-      puntosExtra=100-puntosTotales;
+      puntosExtra=100;
     }
 
     return puntosExtra;
@@ -144,6 +149,73 @@ export class RondaService {
   }
 
 
+  verificarColor(colores:string[], apuesta:string){
+    let colorDominante:string="";
+
+    let ro:number=0;
+    let az:number=0;
+    let ve:number=0;
+    let am:number=0;
+    let na:number=0;
+    let bl:number=0;
+
+    colores.forEach(c => {
+      if(c==="red"){
+        ro++
+      }
+
+      if(c==="blue"){
+        az++
+      }
+
+      if(c==="green"){
+        ve++
+      }
+
+      if(c==="yellow"){
+        am++
+      }
+
+      if(c==="orange"){
+        na++
+      }
+
+      if(c==="white"){
+        bl++
+      }
+    });
+
+    let ContadorColores:number[]=[ro,az,ve,am,na,bl];
+    let masRepetido:number= Math.max(...ContadorColores);
+
+      if(apuesta=="RO" && ro===masRepetido){
+        colorDominante="RO";
+      }
+
+      if(apuesta=="AZ" && az===masRepetido){
+        colorDominante="AZ";
+      }
+
+      if(apuesta=="VE" && ve===masRepetido){
+        colorDominante="VE";
+      }
+
+      if(apuesta=="AM" && am===masRepetido){
+        colorDominante="AM";
+      }
+
+      if(apuesta=="NA" && na===masRepetido){
+        colorDominante="NA";
+      }
+
+      if(apuesta=="BL" && bl===masRepetido){
+        colorDominante="BL"
+      }
+
+      return colorDominante;
+
+  }
+
 
   /* METODO PARA DAR VALORES ALEATORIOS ENTRE 1 Y 5 */
   numerarCartas(){
@@ -195,9 +267,62 @@ export class RondaService {
   }
 
 
+  /* METODO PARA VALIDAR APUESTAS */
+  validarApuestas(apuestasHechas:any[],puntosTotales:number,colores:string[]){
+
+    let apuestasValidas:any=[];
+
+    if(apuestasHechas.length>0){
+      
+      apuestasHechas.forEach(apuesta => {
+
+        /* -----PAR/IMAR----- */
+        if(puntosTotales % 2 === 0 && apuesta==="P"){
+          apuestasValidas.push("P");
+        }
+    
+        if(puntosTotales % 2 !== 0 && apuesta === "I") {
+          apuestasValidas.push("I");
+        }
+
+        
+        /* -----RANGO----- */
+        if(apuesta==="CINCO" && puntosTotales>5){
+          apuestasValidas.push(apuesta);
+        }
+    
+        if(apuesta==="DIEZ" && puntosTotales>10){
+          apuestasValidas.push(apuesta);
+        }
+    
+        if(apuesta==="QUINCE" && puntosTotales>15){
+          apuestasValidas.push(apuesta);
+        }
+    
+        if(apuesta==="VEINTE" && puntosTotales>20){
+          apuestasValidas.push(apuesta);
+        }
+
+        /* -----EXACTO----- */
+        if(puntosTotales === apuesta){
+          apuestasValidas.push(apuesta);
+        }
+
+        /* -----COLOR----- */
+        let colorDominante:string=this.verificarColor(colores, apuesta)
+        if(colorDominante == apuesta){
+          apuestasValidas.push(colorDominante);
+        }
+
+      });
+  }
+
+    return apuestasValidas;
+}
+
 
 /* METODO PARA CREAR RONDA */
-  crearRonda(arrayApuestas:any[]){
+  crearRonda(arrayApuestas:any[],puntosPorJugar:number,intentos:number, cuentaDeIntentos:number){
 
     let colores:string[]=[];
     let carta1=this.numerarCartas();
@@ -215,25 +340,14 @@ export class RondaService {
     
     /* PRUEBA */
     let puntosExtra = this.puntuarApuesta(arrayApuestas,puntos,colores);
+    let apuestasValidas:any[]= this.validarApuestas(arrayApuestas,puntos,colores);
     /* ----------- */
-
-    let rondaNueva= new Ronda(arrayCartas, puntos, arrayApuestas, colores, puntosExtra);    
+    this.intentosJugados+=cuentaDeIntentos;
+    let rondaNueva= new Ronda(arrayCartas, puntos, arrayApuestas, colores, puntosExtra,puntosPorJugar,intentos,this.intentosJugados,apuestasValidas);    
     this.rondas.push(rondaNueva);
     this.rondasSubject.next(this.rondas);
     this.ultimaRondaSubject.next(rondaNueva);
     
-}
-
-
-/* METODO PARA REGISTRAR PUNTOS */
-contadorPuntos(): number { 
-  let totalPuntos = 0;
-  
-  this.rondas.forEach(r => {
-    totalPuntos += r.puntos;
-  });
-
-  return totalPuntos;
 }
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ronda } from 'src/app/modelos/ronda.model';
+import { EstablecerRondaService } from 'src/app/servicios/establecer-ronda.service';
 import { RondaService } from 'src/app/servicios/ronda-service.service';
 
 
@@ -10,7 +11,7 @@ import { RondaService } from 'src/app/servicios/ronda-service.service';
 })
 export class ApuestasComponent implements OnInit {
 
-  constructor(private rondaService: RondaService) { }
+  constructor(private rondaService: RondaService, private establecerRondaService: EstablecerRondaService) { }
 
   rondas:Ronda[]=[];
 
@@ -129,8 +130,10 @@ export class ApuestasComponent implements OnInit {
     if(this.valueExacto>0){this.apuestaTotal.push(this.valueExacto);}    
     this.apuestaTotal.push(this.valueColor);
     this.apuestaTotal.push(this.valueGirar);
-    /* ENVIO ESE ARRAY AL SERVICE DONDE EL METODO CREA LA RONDA */
-    this.rondaService.crearRonda(this.apuestaTotal);
+    /* ENVIO ESE ARRAY AL SERVICE DONDE ESTA EL METODO CREA LA RONDA */
+    let puntosPorJugar:number=this.establecerRondaService.getPuntosPorJugar();
+    let intentos:number=this.establecerRondaService.getIntentos();
+    this.rondaService.crearRonda(this.apuestaTotal,puntosPorJugar,intentos,1);
     /* REINICIO LOS VALORES Y RESETEO EL ARRAY */
     this.resetAll();
   }

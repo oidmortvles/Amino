@@ -15,13 +15,13 @@ export class CartasComponent implements OnInit {
 /* ARRAY DONDE SE GUARDA LA ULTIMA RONDA Y SUS DATOS  */
   ultimaRonda: Ronda | null = null;
 
-  constructor(private rondaService: RondaService, private cdRef: ChangeDetectorRef) {     
+  constructor(private rondaService: RondaService) {     
   }
  
   ngOnInit(): void {    
     this.rondaService.ultimaRonda$.subscribe(ronda => {
       this.ultimaRonda = ronda;
-      console.log(JSON.stringify(ronda, null, 2));
+      console.log(ronda);
     });
   }
 

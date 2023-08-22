@@ -1,7 +1,18 @@
+/* SELECTORES DE RONDA */
+.configuraciones{
+    background-color: red;
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    height: 100vh; /* Altura de la ventana del navegador */    
+}
+
+
 /* CONTAINER DE TODOS LOS ELEMENTOS */
 .contenedor{
     display: flex;
     box-sizing: border-box;
+    
 }
 
 

@@ -24,8 +24,24 @@
     user-select: none;
 }
 
-.apuesta div:nth-child(even){
+.apuesta div{
+    background-color: var(--textW);
+}
+
+.apuesta div.acertado{
     background-color: var(--tarjetas);
+}
+
+.item{
+    width: 2em;
+    height: 2em;
+    background-color: var(--textW);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--textW);
+    user-select: none;
 }
 
 
@@ -55,18 +71,31 @@
     user-select: none;
 }
 
+.extras{
+    color:var(--tarjetas);
+    margin-left: 1em;
+    animation: aparecer .5s ease-in-out;
+    z-index: 300;
+}
+
+
+@keyframes aparecer{
+    0%{transform: translateX(-.5em); opacity: 0%; }
+    100%{transform: translateX(0em); opacity: 100%;}
+}
+
 
 /* CONTADOR DE RONDAS */
 .vidas{
     display: flex;
-    gap:.7em;
+    gap:.3em;
     justify-content: center;
     width: 100%;
     padding: 1em;
     user-select: none;
 }
 
-.live1,.live2,.live3{
+.itemVidas{
     width: 2em;
     height: 2em;
     background-color: var(--textW);
@@ -78,8 +107,12 @@
     user-select: none;
 }
 
-.vidas div:nth-child(1){
+.intentosGastados{
     background-color: var(--tarjetas);
+}
+
+.bi-heart-fill{
+    font-size: 1em;
 }
 
 /* BOTONERA DE CONTROL */

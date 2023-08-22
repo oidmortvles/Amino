@@ -1,34 +1,37 @@
 <div class="contenedor-resultados">
-    <p class="titulos">APUESTAS</p>
+    <p class="titulos">APUESTAS ACERTADAS</p>
 
             <div class="apuesta">
-                <div class="live1">1</div>
-                <div class="live2">2</div>
-                <div class="live3">3</div>
-                <div class="live3">4</div>
-                <div class="live3">5</div>
+                <div class="item" [class.acertado]="apuestaPar"><i class="bi bi-back"></i></div>
+                <div class="item" [class.acertado]="apuestaRango"><i class="bi bi-braces-asterisk"></i></div>
+                <div class="item" [class.acertado]="apuestaValor"><i class="bi bi-box-arrow-in-down"></i></div>
+                <div class="item" [class.acertado]="apuestaColor"><i class="bi bi-brush"></i></div>
+                <div class="item" [class.acertado]="apuestaGirar"><i class="bi bi-arrow-repeat"></i></div>
             </div>
 
 
-        <p class="titulos">PTS TOTALES</p>
+        <p class="titulos">PTS TOTALES + PTS EXTRA</p>
 
             <div class="puntos-totales">
+                
                 <p class="valor">{{puntosTotales}}/</p>
-                <p class="total">100</p>
+                <p class="total">{{puntosObjetivo}}</p>
+                <p class="extras" *ngIf="puntosExtra">+{{puntosExtra}}</p>
+                
             </div>
 
 
-        <p class="titulos">INTENTOS</p>
+        <p class="titulos" >INTENTOS</p>
         
             <div class="vidas">
-                <div class="live1">1</div>
-                <div class="live2">2</div>
-                <div class="live3">3</div>
+                <div class="itemVidas" *ngFor="let _ of obtenerIntentos(intentos); let i = index" [ngClass]="{'intentosGastados': i < intentosJugados}">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
             </div>
 
 
             <div class="restart">
-                <button type="button" class="btn btn-outline-secondary">BORRAR PARTIDA</button>     
+                <button type="button" class="btn btn-outline-secondary" (click)="reiniciarPartida()">REINICIAR PARTIDA</button>     
             </div>
 
             

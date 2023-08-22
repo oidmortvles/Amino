@@ -1,0 +1,16 @@
+.contenido{
+    background-color:darkslateblue;
+    color:white;
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    flex-direction: column;
+    height: 100vh; /* Altura de la ventana del navegador */
+    animation: aparecer 2s ease-in-out;    
+}
+
+@keyframes aparecer{
+0%{opacity: 0%;}
+100%{opacity: 100%;}
+
+}

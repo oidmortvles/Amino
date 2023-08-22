@@ -1,5 +1,8 @@
-<div class="contenedor">
+<app-modal *ngIf="!rondaSeteada;" class="configuraciones"></app-modal>
 
+<div class="contenedor" *ngIf="rondaSeteada && !mostrarVictoria; else pantallaVictoria">
+  
+  
   <div class="game">
     <app-cartas></app-cartas>
     <app-apuestas></app-apuestas>
@@ -11,6 +14,12 @@
 
 
 </div>
+
+<ng-template #pantallaVictoria>
+  <!-- EN CASO DE QUE "mostrarVictoria" SEA TRUE, SE RENDERIZA ESTA PANTALLA -->
+  <app-pantalla-victoria></app-pantalla-victoria>
+  
+</ng-template>
 
 
 <router-outlet></router-outlet>

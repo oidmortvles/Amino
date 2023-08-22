@@ -1,9 +1,17 @@
 El juego se divide en Componente, los cuales cada Componente, tiene su correspondiente Servicio. Estos ultimos utilazan el molde de cada objeto guardado en la carpeta Modelos.
 
+ANOTACION DEL 4/8
+Inicio del proyecto con un html y css basico.
+
+ANOTACION DEL 9/8
+Inicio del proyecto en Angular
 
 ANOTACION DEL 17/8
 Crear el modelo de datos necesarios para que el Componente Apuestas registre las opciones del usuario y desde ese Componente o el Servicio se envie esa Ronda creada con las apuetas dadas. -> Event Binding
 
-
 ANOTACION DEL 20/8
 En el Servicio se crearon la mayoria de metodos para registrar y operar sobre las rondas. Faltan aquellos metodos que permitan determinar el ganador y eliminar la partida entera.
+
+ANOTACION DEL 22/8
+Terminadas todas las funciones para un jugador. Se lograron las funcionalidades de setear ronda, mostrar puntos, verificar apuestas, contados de vidas y verificar victoria. 
+Faltan: opciones para dos jugadores - estetica - apuesta Girar.
