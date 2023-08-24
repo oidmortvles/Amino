@@ -30,6 +30,7 @@
 
 .apuesta div.acertado{
     background-color: var(--tarjetas);
+    transform: translateY(-.5em);
 }
 
 .item{
@@ -42,6 +43,7 @@
     align-items: center;
     color: var(--textW);
     user-select: none;
+    transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 
@@ -51,19 +53,16 @@
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    user-select: none;
+    user-select: none; 
+    position: relative;    
 }
 
-.pts{
-    font-size: 1em;
-    margin-right: 1em;
-    user-select: none;
-}
 
 .valor{
     font-size: 5em;
     user-select: none;
 }
+
 
 .total{
     font-size: 2em;
@@ -71,17 +70,29 @@
     user-select: none;
 }
 
+
 .extras{
+    font-size: 1.5em;
     color:var(--tarjetas);
-    margin-left: 1em;
-    animation: aparecer .5s ease-in-out;
-    z-index: 300;
+    transition: all 1s ease-in-out;
+    position: absolute;
+    padding: 1em;
+}
+
+.extraAnimado{
+    animation: aparecer .5s ease-in-out, desaparecer 1s ease-in-out 2s;
+    animation-fill-mode:forwards;
 }
 
 
 @keyframes aparecer{
-    0%{transform: translateX(-.5em); opacity: 0%; }
-    100%{transform: translateX(0em); opacity: 100%;}
+    0%{transform: translateY(0em); opacity: 0%; }
+    100%{transform: translateY(2em); opacity: 100%;}
+}
+
+@keyframes desaparecer {
+    0% { transform: translateY(2em); opacity: 100%; }
+    100% { transform: translateY(0em); opacity: 0%; }
 }
 
 
@@ -105,10 +116,12 @@
     align-items: center;
     color: var(--textW);
     user-select: none;
+    transition: background-color 0.3s ease;
 }
 
 .intentosGastados{
     background-color: var(--tarjetas);
+    
 }
 
 .bi-heart-fill{

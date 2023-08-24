@@ -16,6 +16,7 @@ export class RondaService {
   
 
 /* OBSERVABLES DEL ARRAY "RONDAS" */
+
   private rondasSubject = new BehaviorSubject<Ronda[]>([]);
   rondas$ = this.rondasSubject.asObservable(); //Guarda todas las rondas creadas
   

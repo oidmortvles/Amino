@@ -1,16 +1,18 @@
 .contenido{
-    background-color:darkslateblue;
+    background-color: rgba(245, 65, 65, 0.5); /* Fondo semi-transparente */
     color:white;
     display: flex;
     align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
     flex-direction: column;
     height: 100vh; /* Altura de la ventana del navegador */
-    animation: aparecer 2s ease-in-out;    
+    width: 100%;
+    animation: apertura 1s;
+    user-select: none;   
 }
 
-@keyframes aparecer{
-0%{opacity: 0%;}
-100%{opacity: 100%;}
+@keyframes apertura{
+ 0%{opacity: 0%;}
+ 100%{opacity: 100%;}
 
 }

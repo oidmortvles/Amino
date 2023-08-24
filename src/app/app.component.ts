@@ -13,7 +13,11 @@ export class AppComponent implements OnInit {
   title = 'amino-game';
   rondaSeteada:boolean=false;
   puntosTotales:number=0;
-  mostrarVictoria:boolean=false;
+
+  mostrarPantalla:boolean=false;
+
+  victoria:boolean=false;
+  perdida:boolean=false;
 
 
   constructor(private establecerRondaService: EstablecerRondaService, 
@@ -23,15 +27,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
 
-    /* METODO PARA OBTENER BOOLEANO DEL FORMULARIO CUANDO SE COMPLETE */
+    /* OBSERVABLE PARA CUANDO FORMULARIO SE COMPLETE */
     this.establecerRondaService.getFormularioCompleto().subscribe(dato => {
       this.rondaSeteada = dato;
     });
 
 
-    /* METODO PARA COMPROBAR VICTORIA */
-    this.rondaService.ultimaRonda$.subscribe(ronda => {
-      this.comprobarVictoria(ronda);      
+    /* OBSERVABLE PARA COMPROBAR VICTORIA */
+    this.rondaService.ultimaRonda$.subscribe(ronda => {      
+      this.comprobarVictoria(ronda);     
     });
 
 
@@ -45,14 +49,24 @@ export class AppComponent implements OnInit {
       let puntosObtenidos:number = ultimaRonda.puntos + ultimaRonda.puntosExtra;
       this.puntosTotales +=puntosObtenidos;
       let intentos:number = ultimaRonda.intentos;  
-      let intentosJugdos:number= ultimaRonda.intentosJugados;
+      let intentosJugados:number= ultimaRonda.intentosJugados;
 
-      if( (this.puntosTotales>=puntosObjetivo) || (intentosJugdos>=intentos) ){
-        this.mostrarVictoria=true
+      if( (this.puntosTotales>=puntosObjetivo) || (intentosJugados>=intentos) ){
+        /* MUESTRA LA PANTALLA DE VICTORIA */
+        this.mostrarPantalla=true;
+      }
+
+      if(this.puntosTotales>=puntosObjetivo && intentosJugados<=intentos){
+        /* INFORMA LA VICTORIA */
+        this.victoria=true;
+      }
+      
+      if(this.puntosTotales<puntosObjetivo && intentosJugados>=intentos){
+        /* INFORMA LA DERROTA */
+        this.perdida=true;
       }
 
     }
-
 
   }
 

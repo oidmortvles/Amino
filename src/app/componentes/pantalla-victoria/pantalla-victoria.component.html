@@ -1,5 +1,13 @@
 <div class="contenido">
-    <p>pantalla-victoria works!</p>
+
+    <div *ngIf="victoria" class="victoria">
+        <p>Felicitaciones! Ganaste!</p> 
+    </div>
+    
+    <div *ngIf="perdida" class="perdida">
+        <p>Lo siento, no alcanzaste el objetivo</p> 
+    </div>    
+
 
     <div class="restart">
         <button type="button" class="btn btn-outline-secondary" (click)="reiniciarPartida()">REINICIAR PARTIDA</button>     

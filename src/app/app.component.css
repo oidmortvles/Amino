@@ -1,18 +1,25 @@
-/* SELECTORES DE RONDA */
-.configuraciones{
-    background-color: red;
+/* PANTALLA MODAL */
+app-modal{
+    background-color:steelblue;
     display: flex;
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-    height: 100vh; /* Altura de la ventana del navegador */    
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    animation: mostrar .8s ease-in-out;   
 }
+
+
+@keyframes mostrar{
+    0%{opacity: 0%;}
+    100%{opacity: 100%;}
+}
+
 
 
 /* CONTAINER DE TODOS LOS ELEMENTOS */
 .contenedor{
     display: flex;
     box-sizing: border-box;
-    
 }
 
 
@@ -50,3 +57,17 @@
 app-apuestas{
 width: 100%;
 }
+
+
+/* PANTALLA DE VICTORIA */
+app-pantalla-victoria{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Asegura que el contenido esté en la parte superior */
+  }

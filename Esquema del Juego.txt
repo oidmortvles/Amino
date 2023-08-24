@@ -14,4 +14,7 @@ En el Servicio se crearon la mayoria de metodos para registrar y operar sobre la
 
 ANOTACION DEL 22/8
 Terminadas todas las funciones para un jugador. Se lograron las funcionalidades de setear ronda, mostrar puntos, verificar apuestas, contados de vidas y verificar victoria. 
-Faltan: opciones para dos jugadores - estetica - apuesta Girar.
+
+ANOTACION DEL 23/8
+Actualizacion de vista. Mejora en animaciones, jugabilidad, experiencia de usuario y componentes dinamicos.
+Faltan: opciones para dos jugadores - estetica - apuesta Girar - responsive.

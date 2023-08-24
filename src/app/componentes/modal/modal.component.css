@@ -4,4 +4,28 @@
     justify-content: center;
     flex-direction: column;
     gap: 2em;
-}
+ }
+
+
+ .dificultad{
+    display: flex;
+    gap:.7em;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
+    user-select: none;    
+ }
+
+ .item{
+    width: 2em;
+    height: 2em;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--textW);
+    user-select: none;
+ }
+
+

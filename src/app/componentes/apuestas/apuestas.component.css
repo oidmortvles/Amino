@@ -44,7 +44,7 @@
 }
 
 .caja-apuesta:hover{
-background-color: orangered;
+background-color: red;
 }
 
 
@@ -74,6 +74,7 @@ background-color: orangered;
 .form-check{
     display: flex;
     flex-direction: column; /* Cambiar la dirección a columna */
+    display: none;
 }
 
 /* LABEL DE CADA SWITCH */
@@ -103,7 +104,13 @@ background-color: orangered;
     padding: 1em;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
+    transition: background-color .5s ease; 
+}
+
+/* BOTON BLOQUEADO */
+.btn-bloqueado{
+    background-color: red;
 }
 
 

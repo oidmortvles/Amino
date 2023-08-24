@@ -36,13 +36,26 @@ export class ResultadosComponent implements OnInit {
       this.rondaService.ultimaRonda$.subscribe(ronda => {
       this.ultimaRonda = ronda;
 
-      this.puntosExtra=ronda?.puntosExtra;       
+      this.puntosExtra=ronda?.puntosExtra;      
       this.obtenerIntentosJugados(ronda?.intentosJugados);
+      
 
       this.puntosObjetivo= this.establecerRondaService.getPuntosPorJugar();
 
       this.resetearApuestas();
-      this.comprobarApuesta(ronda?.apuestasValidas);  
+      this.comprobarApuesta(ronda?.apuestasValidas);
+
+
+      /* RESETEA LA APUESTA ACERTADA PARA QUE DESAPAREZCA PASADOS 2SEG */
+      setTimeout(() => {
+        this.resetearApuestas();        
+      }, 2500);
+
+      /* RESETEA LOS PUNTOS EXTRA PARA QUE DESAPAREZCAS PASADOS 3SEG */
+      setTimeout(() => {
+        this.puntosExtra=undefined;
+      }, 3000);
+
 
     });
 
@@ -56,7 +69,8 @@ export class ResultadosComponent implements OnInit {
     /* METODO PARA OBTENER LOS PUNTOS TOTALES */
     this.rondaService.rondas$.subscribe(ronda => {
       this.puntosTotales = this.calcularPuntosTotales(ronda);
-    });    
+    });
+  
 
 
   }

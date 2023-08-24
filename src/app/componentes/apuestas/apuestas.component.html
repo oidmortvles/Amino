@@ -4,7 +4,7 @@
         
         <!-- PAR/IMPAR -->
 
-        <div class="parImpar caja-apuesta" [ngClass]="{'reverso': voltearPar}" >
+        <label class="parImpar caja-apuesta" [ngClass]="{'reverso': voltearPar}" >
             
             <div class="primera-cara">
                 <div class="form-check form-switch">
@@ -12,6 +12,7 @@
                 </div> 
                 
                 <label class="form-check-label" for="parImpar">PAR / IMPAR</label>
+                
             </div>
 
             <!-- OPCIONES DE APUESTA PARA PAR/IMPAR -->
@@ -28,14 +29,14 @@
 
             </div>
             
-        </div>
+        </label>
 
 
 
 
 
         <!-- RANGO -->
-        <div class="rango caja-apuesta" [ngClass]="{'reverso': voltearRango}" >
+        <label class="rango caja-apuesta" [ngClass]="{'reverso': voltearRango}" >
             
             <div class="primera-cara">
                 <div class="form-check form-switch">
@@ -61,13 +62,13 @@
 
             </div>
             
-        </div>
+        </label>
 
 
 
 
         <!-- NUMERO EXACTO -->
-        <div class="numeroExacto caja-apuesta" [ngClass]="{'reverso': voltearExacto}" >
+        <label class="numeroExacto caja-apuesta" [ngClass]="{'reverso': voltearExacto}" >
             
             <div class="primera-cara">
                 <div class="form-check form-switch">
@@ -89,14 +90,14 @@
 
             </div>
             
-        </div>
+        </label>
 
 
 
 
 
         <!-- COLOR -->
-        <div class="color caja-apuesta" [ngClass]="{'reverso': voltearColor}" >
+        <label class="color caja-apuesta" [ngClass]="{'reverso': voltearColor}" >
             
             <div class="primera-cara">
                 <div class="form-check form-switch">
@@ -124,13 +125,13 @@
 
             </div>
             
-        </div>
+        </label>
 
 
 
         
         <!-- GIRAR CARTAS -->
-        <div class="girarCartas caja-apuesta" [ngClass]="{'reverso': voltearGirar}" >
+        <label class="girarCartas caja-apuesta" [ngClass]="{'reverso': voltearGirar}" >
             
             <div class="primera-cara">
                 <div class="form-check form-switch">
@@ -154,7 +155,7 @@
 
             </div>
             
-        </div>
+        </label>
 
           
           
@@ -171,7 +172,8 @@
     
     <!-- BOTONES DE ENVIO -->
     <div class="botones-envio">
-        <button type="button" class="btn btn-success btn-sm btn-envio" (click)="hacerApuesta()">JUGAR</button>
+        <button type="button" class="btn btn-success btn-sm btn-envio" (click)="hacerApuesta()" 
+        [disabled]="!botonHabilitado" [ngClass]="{'btn-bloqueado': !botonHabilitado}">JUGAR</button>
     </div> 
 
 </div>

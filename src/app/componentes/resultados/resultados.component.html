@@ -16,7 +16,7 @@
                 
                 <p class="valor">{{puntosTotales}}/</p>
                 <p class="total">{{puntosObjetivo}}</p>
-                <p class="extras" *ngIf="puntosExtra">+{{puntosExtra}}</p>
+                <p class="extras" *ngIf="puntosExtra" [class.extraAnimado]="puntosExtra">+{{puntosExtra}}</p>
                 
             </div>
 

@@ -1,6 +1,6 @@
-<app-modal *ngIf="!rondaSeteada;" class="configuraciones"></app-modal>
+<app-modal *ngIf="!rondaSeteada;"></app-modal>
 
-<div class="contenedor" *ngIf="rondaSeteada && !mostrarVictoria; else pantallaVictoria">
+<div class="contenedor" *ngIf="rondaSeteada">
   
   
   <div class="game">
@@ -15,11 +15,9 @@
 
 </div>
 
-<ng-template #pantallaVictoria>
-  <!-- EN CASO DE QUE "mostrarVictoria" SEA TRUE, SE RENDERIZA ESTA PANTALLA -->
-  <app-pantalla-victoria></app-pantalla-victoria>
-  
-</ng-template>
+
+<app-pantalla-victoria *ngIf="mostrarPantalla" [victoria]="victoria" [perdida]="perdida"></app-pantalla-victoria>
+
 
 
 <router-outlet></router-outlet>

@@ -14,6 +14,7 @@ export class ApuestasComponent implements OnInit {
   constructor(private rondaService: RondaService, private establecerRondaService: EstablecerRondaService) { }
 
   rondas:Ronda[]=[];
+  botonHabilitado: boolean = true;
 
   ngOnInit(): void {
     this.rondas=this.rondaService.rondas;
@@ -33,6 +34,7 @@ export class ApuestasComponent implements OnInit {
   mostrarReversoPar(): void {
     this.voltearPar = !this.voltearPar;
     this.valorSwitchPar = false; // Desactivar el switch al voltear la carta
+    this.valuePar="";
   }
 
   resetearEstadoPar():void{
@@ -51,6 +53,7 @@ export class ApuestasComponent implements OnInit {
   mostrarReversoRango(): void {
     this.voltearRango = !this.voltearRango;
     this.valorSwitchRango = false; // Desactivar el switch al voltear la carta
+    this.valueRango="";
   }
 
   resetearEstadoRango():void{
@@ -68,6 +71,7 @@ export class ApuestasComponent implements OnInit {
   mostrarReversoExacto(): void {
     this.voltearExacto = !this.voltearExacto;
     this.valorSwitchExacto = false; // Desactivar el switch al voltear la carta
+    this.valueExacto=0;
   }
 
   resetearEstadoExacto():void{
@@ -85,6 +89,7 @@ export class ApuestasComponent implements OnInit {
   mostrarReversoColor(): void {
     this.voltearColor = !this.voltearColor;
     this.valorSwitchColor = false; // Desactivar el switch al voltear la carta
+    this.valueColor="";
   }
 
   resetearEstadoColor():void{
@@ -101,6 +106,7 @@ export class ApuestasComponent implements OnInit {
   mostrarReversoGirar(): void {
     this.voltearGirar = !this.voltearGirar;
     this.valorSwitchGirar = false; // Desactivar el switch al voltear la carta
+    this.valueGirar="";
   }
 
   resetearEstadoGirar():void{
@@ -120,6 +126,7 @@ export class ApuestasComponent implements OnInit {
     this.resetearEstadoColor();
     this.resetearEstadoGirar();
     this.apuestaTotal=[];
+    this.botonHabilitado = false;
   }
 
 
@@ -134,9 +141,18 @@ export class ApuestasComponent implements OnInit {
     let puntosPorJugar:number=this.establecerRondaService.getPuntosPorJugar();
     let intentos:number=this.establecerRondaService.getIntentos();
     this.rondaService.crearRonda(this.apuestaTotal,puntosPorJugar,intentos,1);
+    
     /* REINICIO LOS VALORES Y RESETEO EL ARRAY */
-    this.resetAll();
+    this.resetAll();    
+
+
+    /* VOLVER A HABILITAR BOTON DE JUEGO */
+    setTimeout(() => {
+      this.botonHabilitado = true;
+    }, 1500);
   }
+
+
 
 
 
