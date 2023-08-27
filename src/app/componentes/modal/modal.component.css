@@ -1,31 +1,132 @@
+/* BOTONES */
 .botonesModal{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2em;
+    gap: 2em; 
+    font-family: 'Reem Kufi', sans-serif;
  }
 
 
- .dificultad{
-    display: flex;
-    gap:.7em;
-    justify-content: center;
-    width: 100%;
-    padding: 1em;
-    user-select: none;    
+.btnInicio{
+   backdrop-filter: blur(9px) saturate(104%);
+   -webkit-backdrop-filter: blur(9px) saturate(104%);
+   background-color: rgba(189, 16, 224, 0.04);
+   padding: .5em;
+   border: 1px solid white;
+
+}
+
+
+.btnInicio:active {
+   backdrop-filter: blur(10px) saturate(104%);
+   -webkit-backdrop-filter: blur(10px) saturate(104%);
+   background-color: rgba(189, 16, 224, 0.04);
+   transform: scale(0.99);
+   outline: none;
+   text-decoration: none;
+   opacity: 0.8;
+   cursor: pointer;
+   border: 1px solid white;
  }
 
- .item{
-    width: 2em;
-    height: 2em;
-    background-color: red;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--textW);
-    user-select: none;
+
+.btnInicio:hover{
+   backdrop-filter: blur(9px) saturate(104%);
+   -webkit-backdrop-filter: blur(9px) saturate(104%);
+   background-color: rgba(255, 255, 255, 0.09);
+} 
+
+.btnEnvio{
+   backdrop-filter: blur(9px) saturate(104%);
+   -webkit-backdrop-filter: blur(9px) saturate(104%);
+   background-color: rgba(146, 146, 146, 0.04);
+   padding: .5em;
+   border: 1px solid white;
+}
+
+.btnEnvio:active{
+   transform: scale(0.99);
+   outline: none;
+   text-decoration: none;
+   opacity: 0.8;
+   cursor: pointer;
+   border: 1px solid white;
+}
+
+.btnEnvio:hover{
+   backdrop-filter: blur(9px) saturate(104%);
+   -webkit-backdrop-filter: blur(9px) saturate(104%);
+   background-color: rgba(255, 255, 255, 0.09);
+}
+
+
+
+/* MODALES */
+.modal{
+   font-family: 'Reem Kufi', sans-serif;
+   user-select: none;
+}
+
+.modal-content{
+   backdrop-filter: blur(9px) saturate(104%);
+   -webkit-backdrop-filter: blur(9px) saturate(104%);
+   background-color: rgba(146, 146, 146, 0.04);
+   color: white;
+   text-align: center;
+   user-select: none;
+}
+
+.modal-title{
+   user-select: none;
+}
+
+.btn-close{
+   color: white;
+}
+
+.btn-close:focus {
+   outline: none; /* Elimina el contorno */
+ box-shadow: none; /* Elimina cualquier sombra de enfoque */
+ border-color: #ced4da;
  }
 
 
+/* OPCIONES DE PARTIDA */
+.itemsCentrados{
+   position: relative;
+  width: 200px; 
+  margin: 0 auto; 
+  overflow: hidden; /* Oculta el desplegable original del select */
+}
+
+.form-select {
+  appearance: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.form-select:focus {
+  outline: none;  
+}
+
+.form-select option {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+/* BARRA DE PROGRESO */
+.progress-bar{
+   background-color: #19D8A1;   
+}
+
+.progress{
+   height: 4em;
+   
+}

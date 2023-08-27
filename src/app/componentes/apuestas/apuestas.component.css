@@ -6,7 +6,8 @@
     justify-content: space-between;
     flex-direction: column;
     width: 100%;    
-    padding: 1em;       
+    padding: 1em;
+    font-family: 'Reem Kufi', sans-serif;       
 }
 
 
@@ -16,7 +17,8 @@
     justify-content: space-between;
     box-sizing: border-box;    
     color: var(--textW);
-    margin-top: 2em; 
+    margin-top: 2em;
+    font-family: 'Reem Kufi', sans-serif; 
 }
 
 
@@ -24,14 +26,13 @@
 .caja-apuesta{
     height: 9em;
     width: 13em;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Reem Kufi', sans-serif;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column; /* Cambiar la dirección a columna */
-    background-color: var(--textB);
     margin: 0em 1em;
     padding: 1em;
     border-radius: .5em;
@@ -41,10 +42,6 @@
     position: relative;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in;
     transform-style: preserve-3d;
-}
-
-.caja-apuesta:hover{
-background-color: red;
 }
 
 
@@ -61,11 +58,21 @@ background-color: red;
     box-sizing: border-box;
 }
 
-.primera-cara{
+.primera-cara{    
+    background-color: var(--tarjetas);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; 
+    flex-direction: column;
+    border-radius: .5em;
+    user-select: none;
+    transition:background-color 0.3s ease-in, backdrop-filter 0.3s ease-in; 
+}
+
+.primera-cara:hover{    
+    backdrop-filter: blur(9px) saturate(104%);
+    -webkit-backdrop-filter: blur(9px) saturate(104%);
+    background-color: rgba(146, 146, 146, 0.04);
 }
 
 
@@ -89,39 +96,60 @@ background-color: red;
     height: 1.5em;
 }
 
+.form-select:focus, .form-control:focus {
+    outline: none; /* Elimina el contorno */
+  box-shadow: none; /* Elimina cualquier sombra de enfoque */
+  border-color: #ced4da;
+  }
+
 /* BOTONES DE ENVIO */
-.botones-envio{
+.botonesEnvio{
     display: flex;
     height: 2em;
     margin-top: 2em;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Reem Kufi', sans-serif;
     
 }
 
-.btn-envio{
-    font-family: 'Poppins', sans-serif;
-    font-size: small;
+.btnEnvio{
+    font-family: 'Reem Kufi', sans-serif;
+    backdrop-filter: blur(9px) saturate(104%);
+    -webkit-backdrop-filter: blur(9px) saturate(104%);
+    background-color: rgba(146, 146, 146, 0.04);
     padding: 1em;
+    border: 1px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color .5s ease; 
-}
+    transition: color 0.3s ease-in;
+ }
+ 
+ .btnEnvio:active{
+    outline: none;
+    text-decoration: none;
+    opacity: 0.8;
+    cursor: pointer;
+    border: 1px solid white;
+ }
+ 
+ .btnEnvio:hover{
+    backdrop-filter: blur(9px) saturate(104%);
+    -webkit-backdrop-filter: blur(9px) saturate(104%);
+    background-color: rgba(255, 255, 255, 0.09);
+ }
 
 /* BOTON BLOQUEADO */
-.btn-bloqueado{
-    background-color: red;
+.btnBloqueado{
+    color: black;
 }
 
 
 
 /* OPCIONES DE APUESTAS */
 
-/* -------COLOR------- */
 .segunda-cara{
-    background-color: var(--textB);
+    background-color: black;
     border-radius: .5em;
-    color:blue;
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -134,8 +162,7 @@ background-color: red;
 
 select{
     font-size: .9em;    
-    box-sizing: border-box;
-    
+    box-sizing: border-box;    
 }
 
 .botones-apuesta{

@@ -1,6 +1,11 @@
 /* PANTALLA MODAL */
 app-modal{
-    background-color:steelblue;
+    background-color: black;
+    background-image: url('/assets/svg/chicoFondo.svg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 60em;
+    background-blend-mode: normal;    
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -20,6 +25,12 @@ app-modal{
 .contenedor{
     display: flex;
     box-sizing: border-box;
+    background-color: black;
+    background-image: url('../assets/svg/fondoCono.svg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 40em;
+    background-blend-mode: normal;
 }
 
 
@@ -27,7 +38,6 @@ app-modal{
 .game{
     box-sizing: border-box;
     width: 70%;
-    background-color:var(--game);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -42,7 +52,6 @@ app-modal{
 .result{
     box-sizing: border-box;
     width: 30%;
-    background-color: var(--result);
     height: 100vh;
     display: flex;
     flex-direction: column;

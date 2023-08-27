@@ -17,4 +17,34 @@ Terminadas todas las funciones para un jugador. Se lograron las funcionalidades 
 
 ANOTACION DEL 23/8
 Actualizacion de vista. Mejora en animaciones, jugabilidad, experiencia de usuario y componentes dinamicos.
-Faltan: opciones para dos jugadores - estetica - apuesta Girar - responsive.
+
+ANOTACION DEL 27/8
+Estetica completa. Archivos en estilo svg para una mejor implementacion. Diseño de arte basado en la historia de Cone Head.
+Faltan: opciones para dos jugadores - apuesta Girar o Sumar una carta mas - responsive.
+
+CONSIDERACIONES:
+Estoy trabajando en un proyecto de Angular, el cual consiste en un juego web. En este juego el jugador obtiene 5 cartas con valores aleatorios y el objetivo del juego es llegar a cierta cantidad de puntos. Los puntos se obtienen por el valor combinado de las cartas que le han tocado pero tambien por las apuestas que haga el jugador. Estas apuestas estan relacionadas a las posibles cartas que le vaya a tocar al jugador en su proxima mano. Es decir, si el juagador apuesta por PAR y el numero de las 5 cartas es 12, al jugador se le asignan: 12 puntos + 10 puntos ya que acerto en la apuesta. Crees que hay algo que pueda mejorar para aumentar las probabilidades de exito de este juego?
+
+* Suena como un proyecto interesante en el que estás trabajando. Aquí hay algunas sugerencias que podrían ayudarte a mejorar las probabilidades de éxito de tu juego:
+
+    - Balancear la jugabilidad y las probabilidades: Asegúrate de que las apuestas y los valores de las cartas estén bien balanceados para que el juego sea desafiante pero no demasiado difícil. Ajusta las probabilidades para que los jugadores tengan una oportunidad justa de ganar, pero también sientan que hay un elemento de suerte y estrategia involucrado.
+
+    - Tutorial y claridad: Asegúrate de que los jugadores comprendan las reglas y mecánicas del juego. Proporciona un tutorial claro al comienzo del juego para que los nuevos jugadores sepan cómo apostar, cómo se calculan los puntos, etc.
+
+    - Feedback visual y auditivo: Utiliza efectos visuales y sonoros para realzar la experiencia del juego. Por ejemplo, puedes mostrar animaciones emocionantes cuando los jugadores acierten en sus apuestas o cuando obtengan una combinación especial de cartas.
+
+    - Variedad en las apuestas y las combinaciones de cartas: Introduce una variedad de tipos de apuestas y combinaciones de cartas para mantener el juego interesante y evitar que se vuelva monótono. Esto mantendrá a los jugadores comprometidos y motivados para seguir jugando.
+
+    - Recompensas y desafíos: Ofrece recompensas y desafíos a los jugadores para mantenerlos motivados. Puedes implementar logros desbloqueables, bonificaciones por alcanzar ciertos puntajes o completar ciertas combinaciones de cartas, y otros elementos que hagan que los jugadores quieran seguir jugando.
+
+    - Interacción social: Si es posible, considera agregar elementos de interacción social al juego, como tablas de clasificación en línea, desafíos entre amigos o competencias en tiempo real. Esto puede aumentar la competitividad y la sensación de comunidad entre los jugadores.
+
+    - Optimización para dispositivos móviles: Asegúrate de que el juego esté optimizado para dispositivos móviles, ya que muchas personas juegan en sus teléfonos o tabletas. La interfaz debe ser intuitiva y fácil de usar en pantallas táctiles.
+
+    - Pruebas y retroalimentación: Realiza pruebas con jugadores beta para obtener retroalimentación sobre la jugabilidad, las dificultades y las áreas de mejora. Esto te ayudará a identificar problemas y a realizar ajustes antes de lanzar el juego oficialmente.
+
+    - Eventos y actualizaciones: Considera la posibilidad de implementar eventos especiales, actualizaciones periódicas o expansiones que agreguen nuevos contenidos al juego. Esto mantendrá a los jugadores interesados a largo plazo.
+
+    - Monetización (si es relevante): Si tienes planeado incluir algún tipo de monetización en el juego, como compras dentro de la aplicación, asegúrate de que sea justo y no desequilibre la experiencia del jugador. Las compras opcionales no deben ser la única forma de progresar en el juego.
+
+Recuerda que la retroalimentación de los jugadores es fundamental para iterar y mejorar tu juego con el tiempo. ¡Buena suerte con tu proyecto de juego de Angular!

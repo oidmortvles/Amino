@@ -12,7 +12,9 @@
 
 /* CARTA INDIVIDUAL */
 .flip-cards{
-    background-color: var(--tarjetas);
+    backdrop-filter: blur(9px) saturate(103%);
+    -webkit-backdrop-filter: blur(9px) saturate(103%);
+    background-color: rgba(255, 255, 255, 0.04);
     width: 11em;
     height: 15.5em;
     font-family: 'Libre Baskerville', serif;
@@ -68,17 +70,45 @@
 }
 
 .front-cards{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+.valores{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-    flex-direction: column;
+    height: 100%;
 }
 
 /* VALOR DE CARTA */
 .number{
     font-size: 5em;
     color:var(--textW);
+    z-index: 100;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+
+
+/* FONDO DE LA CARTA */
+img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;  
+  box-sizing: border-box;
+  mix-blend-mode: overlay;
+  opacity: .5;
+  padding: .3em;
+  
 }
 
 
@@ -87,5 +117,15 @@
     width: 2em;
     height: 2em;
     border-radius: 50%;
-    
+    z-index: 100;   
+}
+
+
+/* FIRMA */
+.firma{
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: .7em;
+    color:white;
+    text-align: center;
+    margin-top: auto;
 }

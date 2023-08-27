@@ -81,7 +81,7 @@
             <!-- OPCIONES DE APUESTA PARA EXACTO -->
             <div class="segunda-cara">
 
-                <input type="number" class="form-control exactoInput" placeholder="VALOR EXACTO" aria-label="Username" aria-describedby="addon-wrapping" [(ngModel)]="valueExacto">
+                <input type="number" min="0" class="form-control exactoInput" placeholder="VALOR EXACTO" aria-label="Username" aria-describedby="addon-wrapping" [(ngModel)]="valueExacto">
                                  
 
                 <div class="botones-apuesta">
@@ -171,9 +171,9 @@
     
     
     <!-- BOTONES DE ENVIO -->
-    <div class="botones-envio">
-        <button type="button" class="btn btn-success btn-sm btn-envio" (click)="hacerApuesta()" 
-        [disabled]="!botonHabilitado" [ngClass]="{'btn-bloqueado': !botonHabilitado}">JUGAR</button>
+    <div class="botonesEnvio">
+        <button type="button" class="btn btn-outline-secondary btnEnvio"(click)="hacerApuesta()" 
+        [disabled]="!botonHabilitado" [ngClass]="{'btnBloqueado': !botonHabilitado}">JUGAR</button>
     </div> 
 
 </div>

@@ -12,7 +12,7 @@ export class ModalComponent implements OnInit {
   formulario:FormGroup;
   mostrarModal:boolean=true;
   nivelDificultad:number=0;
-  repeticion: number[] = [];
+
 
   constructor(private formBuilder: FormBuilder, private establecerRondaService:EstablecerRondaService) { 
     /* CREACION Y CONFIGURACION DEL FORMULARIO */
@@ -29,7 +29,6 @@ export class ModalComponent implements OnInit {
 
        // Actualizar el n° de dificultad
       this.nivelDificultad=this.revisarDificultad(intentos,puntos);
-      this.repeticion=new Array(this.nivelDificultad);
     });
 }
 
@@ -54,6 +53,7 @@ export class ModalComponent implements OnInit {
 
   resetFormulario(){
     this.formulario.reset();
+    this.nivelDificultad=0
   }
 
   revisarDificultad(intentos:number, puntos:number){

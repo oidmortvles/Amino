@@ -1,16 +1,26 @@
 <div class="contenido">
 
     <div *ngIf="victoria" class="victoria">
-        <p>Felicitaciones! Ganaste!</p> 
+        <p class="leyenda">Las victorias son recompenza de aventurarse.<br>
+            Rendirse siempre es una opción, pero solo nos deja varados. Intentarlo es seguir avanzando.</p>
+
+       <img src="../../../assets/svg/chicoVictoria.svg" alt="">
+
+       <p class="leyenda2">FELICITACIONES! LO CONSEGUISTE </p> 
     </div>
     
     <div *ngIf="perdida" class="perdida">
-        <p>Lo siento, no alcanzaste el objetivo</p> 
+        <p class="leyenda">Las derrotas forman parte del camino.<br>
+             Rendirse siempre es una opción, pero solo nos deja varados. Volver a intentarlo es seguir avanzando.</p>
+
+        <img src="../../../assets/svg/chicoPerdida2.svg" alt="">
+
+        <p class="leyenda2">LO SIENTO, ESTA VEZ NO FUE</p> 
     </div>    
 
 
     <div class="restart">
-        <button type="button" class="btn btn-outline-secondary" (click)="reiniciarPartida()">REINICIAR PARTIDA</button>     
+        <button type="button" class="btn btn-outline-secondary btnEnvio" (click)="reiniciarPartida()">REINICIAR PARTIDA</button>     
     </div>
 
 </div>

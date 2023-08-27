@@ -1,6 +1,8 @@
 .contenido{
-    background-color: rgba(245, 65, 65, 0.5); /* Fondo semi-transparente */
-    color:white;
+     backdrop-filter: blur(9px) saturate(13%);
+    -webkit-backdrop-filter: blur(9px) saturate(13%);
+    background-color: rgba(146, 146, 146, 0.04);
+    color: white;
     display: flex;
     align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
@@ -8,11 +10,69 @@
     height: 100vh; /* Altura de la ventana del navegador */
     width: 100%;
     animation: apertura 1s;
-    user-select: none;   
+    user-select: none; 
+    font-family: 'Reem Kufi', sans-serif;  
 }
 
 @keyframes apertura{
  0%{opacity: 0%;}
  100%{opacity: 100%;}
 
+}
+
+/* BOTON DE REINICIO */
+.restart{
+    margin-top: 2em;
+}
+
+.btnEnvio{
+    font-family: 'Reem Kufi', sans-serif;
+    backdrop-filter: blur(9px) saturate(104%);
+    -webkit-backdrop-filter: blur(9px) saturate(104%);
+    background-color: rgba(146, 146, 146, 0.04);
+    padding: .5em;
+    border: 1px solid white;
+ }
+ 
+ .btnEnvio:active{
+    transform: scale(0.99);
+    outline: none;
+    text-decoration: none;
+    opacity: 0.8;
+    cursor: pointer;
+    border: 1px solid white;
+ }
+ 
+ .btnEnvio:hover{
+    backdrop-filter: blur(9px) saturate(104%);
+    -webkit-backdrop-filter: blur(9px) saturate(104%);
+    background-color: rgba(255, 255, 255, 0.09);
+ }
+
+ /* IMAGEN DE FONDO */
+ img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;  
+    box-sizing: border-box;
+    mix-blend-mode: overlay;
+    opacity: .3;
+    padding: .3em;
+    
+  }
+
+
+/*   TEXTO LEYENDA */
+.leyenda{
+    font-style: italic;
+    padding: 1em 0em;
+}
+
+.leyenda2{
+    color: var(--tarjetas);
+    font-weight:600;
+    padding: 1em 0em;
 }
