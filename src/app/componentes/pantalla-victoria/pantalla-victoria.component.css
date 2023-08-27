@@ -68,11 +68,27 @@
 /*   TEXTO LEYENDA */
 .leyenda{
     font-style: italic;
-    padding: 1em 0em;
 }
 
 .leyenda2{
     color: var(--tarjetas);
     font-weight:600;
-    padding: 1em 0em;
 }
+
+span{
+    margin-left: .2em;
+}
+
+/* CAJAS DE TEXTO */
+.perdida ,.victoria{
+    background-color: rgba(15, 15, 15, 0.5);
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    flex-direction: column;
+    padding: 2em;
+    gap: 1em;
+    border-radius: .5em;
+}
+
+

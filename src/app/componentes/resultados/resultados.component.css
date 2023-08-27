@@ -10,8 +10,11 @@
     margin: .5em 0em;
     user-select: none;
     font-family: 'Reem Kufi', sans-serif;
-    font-size: small;
-    
+    font-size: small;    
+}
+
+span{
+    color:var(--tarjetas)
 }
 
 /* APUESTA */
@@ -33,7 +36,7 @@
     transform: translateY(-.5em);
 }
 
-.item{
+.item{    
     width: 2em;
     height: 2em;
     background-color: var(--textW);

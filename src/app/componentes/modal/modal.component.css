@@ -130,3 +130,33 @@
    height: 4em;
    
 }
+
+
+/* CARROUSEL */
+img{
+   height: 12em;
+}
+
+.apuestaModal{
+   width: 70%;
+}
+
+.textoModal{
+   background-color: rgba(15, 15, 15, 0.5);
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    flex-direction: column;
+    padding: 2em;
+    gap: 1em;
+    border-radius: .5em;
+    margin-top: 1em;
+}
+
+.texto{
+   margin: 0em;
+}
+
+span{
+   color: var(--tarjetas);
+}

@@ -10,11 +10,11 @@
             </div>
 
 
-        <p class="titulos">PTS TOTALES + PTS EXTRA</p>
+        <p class="titulos">PTS TOTALES <span>+</span> PTS EXTRA</p>
 
             <div class="puntos-totales">
                 
-                <p class="valor">{{puntosTotales}}/</p>
+                <p class="valor">{{puntosTotales}}<span>/</span></p>
                 <p class="total">{{puntosObjetivo}}</p>
                 <p class="extras" *ngIf="puntosExtra" [class.extraAnimado]="puntosExtra">+{{puntosExtra}}</p>
                 
