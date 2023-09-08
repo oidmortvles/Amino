@@ -12,7 +12,7 @@
       CONFIGURAR PARTIDA
   </button>  
   
-  
+  <footer>Creación, Diseño y Desarrollo a cargo de Daniel Per</footer>
 
 </div>
 
@@ -55,7 +55,7 @@
 
                 </div>
 
-                <label class="form-label">DIFICULTAD</label>
+                <label class="form-label"><span>DIFICULTAD</span></label>
                 
                 <div class="progress itemsCentrados" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                   <div class="progress-bar" [style.width.%]="nivelDificultad * 20"></div>
@@ -79,12 +79,11 @@
 
 
 <!-- INSTRUCTIVO -->
-<div class="modal fade" id="instructivo" tabindex="-1" aria-labelledby="instructivo" aria-hidden="true">
+<div class="modal fade" id="instructivo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="instructivo" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">INSTRUCCIONES</h1>
-        <button type="button" class="btn-close btn btn-secondary btnEnvio" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
       
@@ -96,8 +95,8 @@
               <img src="../../../assets/modal/cartaModal.svg"  class="cartaModal" alt="...">
 
               <div class="textoModal">
-                <p class="texto">El juego consiste en las combinaciones que se puedan hacer entre <span>Cartas y Apuestas</span>.</p>
-                  <p class="texto">Cada carta tiene un valor y un color aleatorio</p>
+                <p class="texto">El juego consiste en las combinaciones que se puedan hacer entre <span>cartas y apuestas</span>.</p>
+                <p class="texto">Cada carta tiene un valor y un color aleatorio</p>
               </div>
 
             </div>
@@ -106,8 +105,8 @@
               <img src="../../../assets/modal/apuestaModal.svg"  class="apuestaModal" alt="...">
 
               <div class="textoModal">
-                <p class="texto">En cada ronda, estas cartas se combinan con las apuestas que hagas. Podés optar por apostar o no.</p>
-                <p class="texto">Hay apuestas de distinto tipo y cada una sumará puntos <span>Extra</span> dependiendo su riesgo.</p>
+                <p class="texto">En cada ronda, estas cartas se combinan con las apuestas que hagas. Siempre podés optar por apostar o no.</p>
+                <p class="texto">Hay apuestas de distinto tipo y cada una sumará puntos <span>extra dependiendo su riesgo</span>.</p>
               </div>
 
             </div>
@@ -137,7 +136,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btnEnvio" data-bs-dismiss="modal">CERRAR</button>
+        <button type="button" class="btn btn-secondary btnEnvio" data-bs-dismiss="modal" data-bs-target="#instructivo">CERRAR</button>
       </div>
     </div>
   </div>

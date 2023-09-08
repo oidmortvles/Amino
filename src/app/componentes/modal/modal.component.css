@@ -120,7 +120,6 @@
 }
 
 
-
 /* BARRA DE PROGRESO */
 .progress-bar{
    background-color: #19D8A1;   
@@ -142,21 +141,34 @@ img{
 }
 
 .textoModal{
-   background-color: rgba(15, 15, 15, 0.5);
-    display: flex;
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-    flex-direction: column;
+    background-color: rgba(15, 15, 15, 0.5);
     padding: 2em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex-direction: column;
     gap: 1em;
     border-radius: .5em;
     margin-top: 1em;
+    height: 10em;
 }
 
 .texto{
    margin: 0em;
+   text-align: left;
 }
 
 span{
    color: var(--tarjetas);
+}
+
+footer{
+   padding: 1em;
+   position: absolute;
+   z-index: 200;
+   color: var(--textW);
+   top: 1em;
+   opacity: .1;
+   user-select: none;
+   font-size: smaller;
 }

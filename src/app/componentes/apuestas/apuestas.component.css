@@ -116,7 +116,7 @@
     backdrop-filter: blur(9px) saturate(104%);
     -webkit-backdrop-filter: blur(9px) saturate(104%);
     background-color: rgba(146, 146, 146, 0.04);
-    padding: 1em;
+    padding: 1em 1.5em;
     border: 1px solid white;
     display: flex;
     align-items: center;

@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { EstablecerRondaService } from './servicios/establecer-ronda.service';
 import { PantallaVictoriaComponent } from './componentes/pantalla-victoria/pantalla-victoria.component';
+import { VistaMobileComponent } from './componentes/vista-mobile/vista-mobile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PantallaVictoriaComponent } from './componentes/pantalla-victoria/panta
     ResultadosComponent,
     ApuestasComponent,
     ModalComponent,
-    PantallaVictoriaComponent
+    PantallaVictoriaComponent,
+    VistaMobileComponent
   ],
   imports: [
     BrowserModule,
